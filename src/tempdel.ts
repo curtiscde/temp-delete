@@ -1,5 +1,4 @@
 import { Table } from "https://deno.land/x/cliffy@v0.16.0/table/mod.ts";
-
 import { getFilesInDir } from './getFilesInDir.ts'
 import { IFile } from "./IFile.ts";
 import { daysUntilDelete } from './config.ts';
@@ -9,6 +8,7 @@ const getTotalFileSize = (files: IFile[]): number => files.map(f => f.size).redu
 const formatBytesToMB = (bytes: number): string => (bytes / 1024 / 1024).toFixed(2);
 
 const logFilesToBeDeleted = (filesToBeDeleted: IFile[]) => {
+  console.log('Files to be deleted:')
 
   if (filesToBeDeleted.length > 100) {
     filesToBeDeleted.forEach(file => {
