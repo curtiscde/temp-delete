@@ -1,3 +1,3 @@
 const daysUntilDelete = 180;
 
-export { daysUntilDelete }
+export { daysUntilDelete };
