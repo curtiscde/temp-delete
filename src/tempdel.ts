@@ -3,11 +3,10 @@ import { getFilesInDir } from './getFilesInDir.ts';
 import { IFile } from './IFile.ts';
 import { daysUntilDelete } from './config.ts';
 import { deleteFiles } from './deleteFiles.ts';
+import { formatBytesToMB } from './formatBytesToMB.ts';
 
 const getTotalFileSize = (files: IFile[]): number =>
   files.map((f) => f.size).reduce((x, y) => x + y, 0);
-const formatBytesToMB = (bytes: number): string =>
-  (bytes / 1024 / 1024).toFixed(2);
 
 const logFilesToBeDeleted = (filesToBeDeleted: IFile[]) => {
   console.log('Files to be deleted:');
